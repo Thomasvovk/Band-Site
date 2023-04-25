@@ -4,33 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/partials/bio.css" />
+    <link rel="stylesheet" href="/styles/bio.css" />
     <title>Band Site</title>
   </head>
 
   <body>
     <header class="header">
-      <logo class="header__logo">BANDSITE</logo>
-      <ul class="header__nav">
-        <li class="header__list">Biography</li>
-        <li class="header__list">Shows</li>
-      </ul>
+      <!-- Logo -->
+      <img
+        class="header__logo"
+        src="/assets/Logo/Logo-bandsite.svg"
+        alt="Logo"
+      />
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">Biography</li>
+          <li class="header__item header__item--inactive">Shows</li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <section>
-        <h1>The Bees Knees</h1>
-        <img src="" alt="" />
+      <section class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title">The Bees Knees</h1>
+        </div>
       </section>
-      <selection>
-        <h2>About the Musicians</h2>
-        <img src="" alt="" />
-        <p>
+
+      <selection class="info">
+        <h2 class="info__title">About the Musicians</h2>
+        <img class="info__image" src="/assets/Images/band.jpg" alt="band" />
+        <p class="info__quote">
           “We push each other to be the best. It’s not uncommon for one of us to
-          say ‘this needs to be better, back to the drawing board’” - Bryan
-          Teddy, lead vocalist of The Bees Knees
+          say ‘this needs to be better, back to the drawing board’”
         </p>
-        <p>
+        <p class="info__quote-owner">
+          - Bryan Teddy, lead vocalist of The Bees Knees
+        </p>
+        <p class="info__desctiprion">
           The Bees Knees The Bees Knees is a pop rock band originating from San
           Francisco, California. The band consists of lead vocalist Bryan Teddy,
           guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee
@@ -50,6 +61,7 @@
           2021.
         </p>
       </selection>
+
       <section>
         <h2>Photo Gallery</h2>
         <img src="" alt="" />

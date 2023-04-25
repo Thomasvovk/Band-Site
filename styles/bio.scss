@@ -1,2 +1,108 @@
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/variables" as *;
+
+// Font
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  font-weight: 400;
+  src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("woff2");
+}
+
+@font-face {
+  font-family: "Avenir Next Demi";
+  font-weight: 600;
+  src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("woff2");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  font-weight: 700;
+  src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Header Section
+
+header {
+  background-color: $BandSite-color;
+  color: $White-color;
+  padding: 1rem 1rem 1rem 1rem;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.header {
+  &__logo {
+    display: flex;
+    padding: 0.5rem 0 0.5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: $font-demi;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+
+  &__item--inactive {
+    color: #afafaf;
+    font: $font-regular;
+  }
+}
+
+.hero {
+  padding: 0 0 1rem 0;
+  &__container {
+    background-image: url(/assets/Images/hero-bio.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 12rem;
+    position: relative;
+  }
+
+  &__title {
+    color: $White-color;
+    font-family: $font-demi;
+    font-size: 1.5rem;
+    padding: 0 0 0 1rem;
+    position: absolute;
+    top: 4.5rem;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem 0 1rem;
+  &__title {
+    font-family: $font-bold;
+    color: $BandSite-color;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 0 0 1rem 0;
+  }
+  &__image {
+    padding: 0 0 1rem 0;
+  }
+  &__quote {
+    font-family: $font-demi;
+    color: $BandSite-color;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  &__quote-owner {
+    @extend .info__quote;
+    padding: 0 0 1.5rem 0;
+  }
+}
