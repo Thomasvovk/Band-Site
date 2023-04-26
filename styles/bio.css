@@ -30,9 +30,16 @@ header ul {
 
 .header__logo {
   display: flex;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0 0 0.5rem 0;
   margin-left: auto;
   margin-right: auto;
+}
+.header__divider {
+  border-bottom: 3px solid #e1e1e1;
+  position: relative;
+  width: 55%;
+  top: 1rem;
+  right: 1rem;
 }
 .header__list {
   display: flex;
@@ -47,7 +54,8 @@ header ul {
 }
 
 .hero {
-  padding: 0 0 1rem 0;
+  padding: 0 0 1.5rem 0;
+  position: relative;
 }
 .hero__container {
   background-image: url(/assets/Images/hero-bio.jpg);
@@ -71,7 +79,7 @@ header ul {
   margin: 0 1rem 0 1rem;
 }
 .info__title {
-  font-family: "Avenir Next Bold";
+  font-family: "Avenir Next Demi";
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -88,4 +96,83 @@ header ul {
 }
 .info__quote-owner {
   padding: 0 0 1.5rem 0;
+}
+.info__subheader {
+  font-family: "Avenir Next Regular";
+  font-size: 0.875rem;
+  padding: 0 0 16px 0;
+}
+.info__quote-owner {
+  padding: 0.3125rem 0 1rem 0;
+}
+.info__description {
+  font-family: "Avenir Next Regular";
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding: 0 0 1rem 0;
+}
+
+.gallery {
+  margin: 0 1rem 0 1rem;
+  background-color: #fafafa;
+}
+.gallery__image {
+  width: 100%;
+  padding: 0 0 1rem 0;
+}
+.gallery__title {
+  padding: 1.5rem 0 1rem 0;
+  font-family: "Avenir Next Demi";
+  color: #323232;
+}
+
+footer {
+  background-color: #323232;
+  color: #ffffff;
+}
+
+.footer {
+  padding: 0 1rem 0 1rem;
+}
+.footer__card {
+  padding: 1.5rem 0 1rem 0;
+}
+.footer__title {
+  padding: 0 0 1rem 0;
+  font-family: "Avenir Next Demi";
+  line-height: 2rem;
+  color: #ffffff;
+}
+.footer__icons {
+  padding: 0 1rem 0 0;
+}
+.footer__contact-name {
+  font-family: "Avenir Next Demi";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #ffffff;
+}
+.footer__contact-company {
+  padding: 0 0 1rem 0;
+  font-family: "Avenir Next Demi";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+.footer__contact-info, .footer__contact-email {
+  font-family: "Avenir Next Regular";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+.footer__contact-email {
+  padding: 1rem 0 1rem 0;
+}
+.footer__copyright-card {
+  padding: 1.5rem 0 0 0;
+}
+.footer__copyright-info {
+  padding: 1rem 0 1rem 0;
+  font-family: "Avenir Next Regular";
+  font-size: 0.6875rem;
+  line-height: 1.125rem;
 }/*# sourceMappingURL=bio.css.map */
