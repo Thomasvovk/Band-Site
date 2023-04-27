@@ -16,54 +16,91 @@ header {
 }
 
 .header {
-  &__logo {
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2.25rem 0 0 1rem;
+  }
+  &__logo-img {
     display: flex;
     padding: 0 0 0.5rem 0;
     margin-left: auto;
     margin-right: auto;
+    @include tablet {
+      width: 120%;
+    }
   }
-
-  &__divider {
-    border-bottom: 3px solid $Mercury-color;
-    position: relative;
-    width: 55%;
-    top: 1rem;
-    right: 1rem;
+  &__logo {
+    @include tablet {
+      padding: 0 2.25rem 2.25rem;
+    }
   }
 
   &__list {
+    @include sub-header;
     display: flex;
     justify-content: space-evenly;
     font-family: $font-demi;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  &__item {
+    @include tablet {
+      padding: 0 2.25rem 0 0;
+    }
+  }
+
+  &__item--active {
+    @include tablet {
+      padding: 0 0 0 3rem;
+    }
   }
 
   &__item--inactive {
-    color: #afafaf;
-    font: $font-regular;
+    color: $Mercury-color;
+    font-family: "Avenir Next Regular";
+    font-weight: 200;
+    @include tablet {
+      padding: 0 0 0 3rem;
+    }
   }
 }
 
 .hero {
-  padding: 0 0 1.5rem 0;
-  position: relative;
+  margin: 0 0 1.5rem 0;
+  width: 100%;
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/assets/Images/hero-bio.jpg);
+  @include tablet {
+    height: 50vh;
+    margin: 0 0 3rem 0;
+  }
 
-  &__container {
-    background-image: url(/assets/Images/hero-bio.jpg);
-    background-size: cover;
+  &__overlay {
     width: 100%;
-    height: 12rem;
-    position: relative;
+    height: 30vh;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: flex;
+    align-items: center;
+    @include tablet {
+      height: 50vh;
+    }
   }
 
   &__title {
+    @include page-header;
     color: $White-color;
     font-family: $font-demi;
-    font-size: 1.5rem;
     padding: 0 0 0 1rem;
-    position: absolute;
-    top: 4.5rem;
+    @include tablet {
+      font-size: 3.75rem;
+      padding-left: 2.25rem;
+    }
   }
 }
 
@@ -71,55 +108,119 @@ header {
   display: flex;
   flex-direction: column;
   margin: 0 1rem 0 1rem;
+  @include tablet {
+    margin: 0 2.25rem 0 2.25rem;
+  }
   &__title {
+    @include section-header;
     font-family: $font-demi;
     color: $BandSite-color;
-    font-size: 1.5rem;
-    line-height: 2rem;
     padding: 0 0 1rem 0;
+    @include tablet {
+      font-size: 2.25rem;
+      padding: 0 0 2.25rem 0;
+    }
   }
   &__image {
+    width: 100%;
     padding: 0 0 1rem 0;
+    @include tablet {
+      width: 90%;
+      height: 35vh;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
+  &__card {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
   &__quote {
+    @include sub-header;
     font-family: $font-demi;
     color: $BandSite-color;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    @include tablet {
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 0 2.25rem 0 2.25rem;
+    }
   }
   &__quote-owner {
     @extend .info__quote;
     padding: 0 0 1.5rem 0;
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1rem 0 0 0;
+    }
   }
   &__subheader {
+    @include sub-header;
     font-family: $font-regular;
-    font-size: 0.875rem;
     padding: 0 0 16px 0;
+    @include tablet {
+      font-size: 1.5rem;
+      font-family: $font-demi;
+      margin: 0 2.25rem 0 2.25rem;
+      padding: 2.25rem 0 2.25rem 0;
+    }
   }
-  &__quote-owner {
-    padding: 0.3125rem 0 1rem 0;
+
+  &__containar {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 2.25rem 0 2.25rem;
+    }
   }
+
   &__description {
+    @include body-copy;
     font-family: $font-regular;
     color: $BandSite-color;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
     padding: 0 0 1rem 0;
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 0 2rem 3rem 0;
+    }
   }
 }
 
 .gallery {
-  margin: 0 1rem 0 1rem;
   background-color: $Alabaster-color;
+  padding: 0 0 2.25rem 0;
 
   &__image {
     width: 100%;
     padding: 0 0 1rem 0;
+    @include tablet {
+      padding: 16px 16px 0 0;
+    }
   }
   &__title {
-    padding: 1.5rem 0 1rem 0;
+    padding: 1.5rem 0 1rem 1rem;
     font-family: $font-demi;
     color: $BandSite-color;
+    @include tablet {
+      margin: 0 2.25rem 0 2.25rem;
+      padding: 3rem 0 0 0;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
+
+  &__card {
+    margin: 0 1rem 0 1rem;
+    @include tablet {
+      margin: 0 2.25rem 0 2.25rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -135,31 +236,28 @@ footer {
     padding: 1.5rem 0 1rem 0;
   }
   &__title {
+    @include section-header;
     padding: 0 0 1rem 0;
     font-family: $font-demi;
-    line-height: 2rem;
     color: $White-color;
   }
   &__icons {
     padding: 0 1rem 0 0;
   }
   &__contact-name {
+    @include sub-header;
     font-family: $font-demi;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
     color: $White-color;
   }
   &__contact-company {
+    @include sub-header;
     padding: 0 0 1rem 0;
     font-family: $font-demi;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
   }
 
   &__contact-info {
+    @include body-copy;
     font-family: $font-regular;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
   }
   &__contact-email {
     @extend .footer__contact-info;
@@ -169,9 +267,8 @@ footer {
     padding: 1.5rem 0 0 0;
   }
   &__copyright-info {
+    @include labels-buttons;
     padding: 1rem 0 1rem 0;
     font-family: $font-regular;
-    font-size: 0.6875rem;
-    line-height: 1.125rem;
   }
 }
