@@ -21,7 +21,7 @@ header {
 .header {
   @include tablet {
     display: flex;
-    gap: 3rem;
+    gap: 6rem;
     padding: 2.25rem 0 0 1rem;
   }
   &__logo-img {
@@ -43,10 +43,9 @@ header {
     @include sub-header;
     display: flex;
     @include tablet {
-      gap: 2rem;
+      gap: 4rem;
     }
 
-    font-family: $font-demi;
     @include tablet {
       @include desktop_tablet_body-copy;
     }
@@ -61,13 +60,14 @@ header {
   }
 
   &__item {
+    @include desktop_tablet_body-copy;
     text-align: center;
     color: $Mercury-color;
     width: 50%;
     padding-bottom: 0.5rem;
     @include tablet {
       padding: 0 2.25rem 0 0;
-      width: 35%;
+      width: 28%;
       padding-bottom: 1.4rem;
     }
   }
@@ -81,6 +81,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(/assets/Images/hero-bio.jpg);
+
   @include tablet {
     height: 50vh;
     margin: 0 0 3rem 0;
@@ -104,6 +105,7 @@ header {
     padding: 0 0 0 1rem;
     @include tablet {
       @include desktop_tablet_page-header;
+      font-family: $font-demi;
       padding-left: 2.25rem;
     }
   }
@@ -123,12 +125,13 @@ header {
     padding: 0 0 1rem 0;
     @include tablet {
       @include desktop_tablet_section-header;
+      font-family: $font-demi;
       padding: 0 0 2.25rem 0;
     }
   }
   &__image {
     width: 100%;
-    padding: 0 0 1rem 0;
+    padding: 0 0 2.25rem 0;
     @include tablet {
       width: 90%;
       height: 35vh;
@@ -148,6 +151,7 @@ header {
     font-family: $font-demi;
     color: $BandSite-color;
     @include tablet {
+      @include desktop_tablet_subheader;
       text-align: left;
       font-size: 1.5rem;
       line-height: 2rem;
@@ -158,8 +162,9 @@ header {
     @extend .info__quote;
     padding: 0 0 1.5rem 0;
     @include tablet {
-      @include desktop_tablet_body-copy;
-      padding: 1rem 0 0 0;
+      @include desktop_tablet_subheader;
+      font-size: 1rem;
+      padding: 0.5rem 0 0 0;
     }
   }
   &__subheader {
@@ -196,23 +201,29 @@ header {
 
 .gallery {
   background-color: $Alabaster-color;
+  display: flex;
+  flex-wrap: wrap;
   padding: 0 0 2.25rem 0;
+  @include tablet {
+    padding: 0 2.25rem 2rem 2.25rem;
+  }
 
   &__image {
     width: 100%;
     padding: 0 0 1rem 0;
     @include tablet {
       width: 31%;
+      padding: 0 0 2rem 0;
     }
   }
   &__title {
-    padding: 1.5rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 1rem;
     font-family: $font-demi;
     color: $BandSite-color;
     @include tablet {
       @include desktop_tablet_section-header;
-      margin: 0 2.25rem 0 2.25rem;
-      padding: 3rem 0 0 0;
+      font-family: $font-demi;
+      padding: 3rem 0 2rem 0;
     }
   }
 
@@ -221,7 +232,8 @@ header {
     @include tablet {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      margin: 0;
     }
   }
 }
@@ -233,44 +245,106 @@ footer {
 
 .footer {
   padding: 0 1rem 0 1rem;
+  @include tablet {
+    padding: 2.25rem 2.25rem 0 2.25rem;
+  }
 
   &__card {
     padding: 1.5rem 0 1rem 0;
+    @include tablet {
+      order: -2;
+      flex: 1 0 50%;
+      display: flex;
+      align-items: baseline;
+    }
   }
   &__title {
     @include section-header;
     padding: 0 0 1rem 0;
     font-family: $font-demi;
     color: $White-color;
+    @include tablet {
+      @include desktop_tablet_section-header;
+      font-family: $font-demi;
+      padding: 0 1.6rem 0 0;
+    }
+  }
+
+  &__information {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  &__social {
+    @include tablet {
+      display: flex;
+    }
   }
   &__icons {
     padding: 0 1rem 0 0;
+    @include tablet {
+      padding: 0 1.5rem 0 0;
+    }
   }
+
+  &__contacts {
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 2rem 0 0 0;
+    }
+  }
+  &__contact {
+    @include tablet {
+      padding: 0 2.25rem 0 0;
+    }
+  }
+
   &__contact-name {
     @include sub-header;
     font-family: $font-demi;
     color: $White-color;
+    @include tablet {
+    }
   }
   &__contact-company {
     @include sub-header;
     padding: 0 0 1rem 0;
     font-family: $font-demi;
+    @include tablet {
+    }
   }
 
   &__contact-info {
     @include body-copy;
     font-family: $font-regular;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
   }
   &__contact-email {
     @extend .footer__contact-info;
     padding: 1rem 0 1rem 0;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
   }
-  &__copyright-card {
+  &__logo {
     padding: 1.5rem 0 0 0;
+    @include tablet {
+      order: -1;
+      display: flex;
+    }
   }
   &__copyright-info {
     @include labels-buttons;
     padding: 1rem 0 1rem 0;
     font-family: $font-regular;
+    @include tablet {
+      @include dekstop_tablet_footer-copy;
+      padding: 2rem 0 2rem 0;
+    }
   }
 }
