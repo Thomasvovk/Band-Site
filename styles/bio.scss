@@ -8,10 +8,10 @@
 header {
   background-color: $BandSite-color;
   padding: 1rem 0 0 0;
-
   ul {
     list-style: none;
   }
+
   a {
     text-decoration: none;
     color: $Mercury-color;
@@ -24,6 +24,7 @@ header {
     gap: 4rem;
     padding: 2.25rem 0 0 1rem;
   }
+
   @include desktop {
     padding-left: 7rem;
   }
@@ -36,31 +37,38 @@ header {
       width: 7.5rem;
     }
   }
+
   &__logo {
     @include tablet {
       padding: 0 0 1rem 1rem;
+    }
+
+    @include desktop {
+      padding-left: 0;
     }
   }
 
   &__list {
     @include sub-header;
     display: flex;
-    @include tablet {
-      gap: 4rem;
-    }
+
     @include tablet {
       @include desktop_tablet_body-copy;
+      gap: 4rem;
     }
   }
 
   &__active {
     border-bottom: 0.1875rem solid $White-color;
   }
+
   &__active-link {
     color: $White-color;
   }
+
   &__inactive:hover {
     border-bottom: 0.1875rem solid $White-color;
+
     @include tablet {
       border-bottom: 0.1875rem solid $White-color;
       width: 18%;
@@ -73,6 +81,7 @@ header {
     color: $Mercury-color;
     width: 50%;
     padding-bottom: 0.5rem;
+
     @include tablet {
       padding: 0 2.25rem 0 0;
       width: 28%;
@@ -86,25 +95,28 @@ header {
 .hero {
   margin: 0 0 1.5rem 0;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(/assets/Images/hero-bio.jpg);
+
   @include tablet {
     height: 50vh;
     margin: 0 0 3rem 0;
   }
+
   @include desktop {
     height: 70vh;
   }
 
   &__overlay {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: flex;
     align-items: center;
+
     @include tablet {
       height: 50vh;
     }
@@ -118,10 +130,13 @@ header {
     color: $White-color;
     font-family: $font-demi;
     padding: 0 0 0 1rem;
+
     @include tablet {
       @include desktop_tablet_page-header;
       font-family: $font-demi;
+      padding-left: 2rem;
     }
+
     @include desktop {
       padding-left: 7rem;
     }
@@ -134,45 +149,54 @@ header {
   display: flex;
   flex-direction: column;
   margin: 0 1rem 0 1rem;
+
   @include tablet {
     margin: 0 2.25rem 0 2.25rem;
   }
+
   @include desktop {
     width: 63.75rem;
     margin-left: auto;
     margin-right: auto;
   }
+
   &__title {
     @include section-header;
     font-family: $font-demi;
     color: $BandSite-color;
     padding: 0 0 1rem 0;
+
     @include tablet {
       @include desktop_tablet_section-header;
       font-family: $font-demi;
       padding: 0 0 2.25rem 0;
     }
   }
+
   &__image {
     width: 100%;
     padding: 0 0 1rem 0;
+
     @include tablet {
       width: 100%;
       height: 22rem;
       object-fit: cover;
       margin: 0 2rem 0 2rem;
     }
+
     @include desktop {
       width: 80%;
       height: 30rem;
       padding: 0 0 2rem 0;
     }
   }
+
   &__card {
     @include tablet {
       display: flex;
       flex-wrap: wrap;
     }
+
     @include desktop {
       justify-content: space-evenly;
     }
@@ -180,27 +204,29 @@ header {
 
   &__quote {
     @include sub-header;
-    font-family: $font-demi;
     color: $BandSite-color;
+
     @include tablet {
       @include desktop_tablet_subheader;
       text-align: left;
-      font-size: 1.5rem;
-      line-height: 2rem;
       margin: 0 2rem 0 2.25rem;
     }
+
     @include desktop {
       margin: 0 12rem 0 6.6rem;
     }
   }
+
   &__quote-owner {
     @extend .info__quote;
     padding: 0 0 1.5rem 0;
+
     @include tablet {
       @include desktop_tablet_subheader;
       font-size: 1rem;
       padding: 0.5rem 0 0 0;
     }
+
     @include desktop {
       width: 100%;
       margin: 0 12rem 0 6.5rem;
@@ -211,12 +237,13 @@ header {
     @include sub-header;
     font-family: $font-regular;
     padding: 0 0 16px 0;
+
     @include tablet {
       @include desktop_tablet_subheader;
-      font-family: $font-demi;
       margin: 0 2.25rem 0 2.25rem;
       padding: 2.25rem 0 2.25rem 0;
     }
+
     @include desktop {
       margin: 0 12rem 0 6.5rem;
     }
@@ -228,6 +255,7 @@ header {
       justify-content: space-between;
       margin: 0 2.25rem 0 2.25rem;
     }
+
     @include desktop {
       margin: 0 5rem 0 6.5rem;
     }
@@ -235,12 +263,19 @@ header {
 
   &__description {
     @include body-copy;
-    font-family: $font-regular;
     color: $BandSite-color;
     padding: 0 0 1rem 0;
+
     @include tablet {
       @include desktop_tablet_body-copy;
       padding: 0 2rem 3rem 0;
+      width: fit-content;
+    }
+  }
+
+  &__description--padding {
+    @include tablet {
+      padding-right: 0.5rem;
     }
   }
 }
@@ -252,9 +287,11 @@ header {
   &__section {
     display: flex;
     flex-wrap: wrap;
+
     @include tablet {
       padding: 0 2.25rem 2.25rem 2.25rem;
     }
+
     @include desktop {
       width: 63.75rem;
       margin-left: auto;
@@ -268,18 +305,22 @@ header {
     width: 100%;
     padding: 0 0 1rem 0;
     filter: grayscale(1);
+
     @include tablet {
       width: 31%;
       padding: 0;
     }
   }
+
   &__image:hover {
     filter: none;
   }
+
   &__title {
     padding: 1rem 0 1rem 1rem;
     font-family: $font-demi;
     color: $BandSite-color;
+
     @include tablet {
       @include desktop_tablet_section-header;
       font-family: $font-demi;
@@ -291,6 +332,7 @@ header {
     margin: 0 1rem 0 1rem;
     column-gap: 1rem;
     row-gap: 1rem;
+
     @include tablet {
       display: flex;
       flex-wrap: wrap;
@@ -307,6 +349,7 @@ header {
 footer {
   background-color: $BandSite-color;
   color: #ffffff;
+
   a {
     text-decoration: none;
     color: $White-color;
@@ -315,9 +358,11 @@ footer {
 
 .footer {
   padding: 0 1rem 0 1rem;
+
   @include tablet {
     padding: 2.25rem 2.25rem 0 2.25rem;
   }
+
   @include desktop {
     width: 63.75rem;
     margin-left: auto;
@@ -326,6 +371,7 @@ footer {
 
   &__card {
     padding: 1.5rem 0 1rem 0;
+
     @include tablet {
       order: -2;
       flex: 1 0 50%;
@@ -333,15 +379,17 @@ footer {
       align-items: baseline;
     }
   }
+
   &__title {
     @include section-header;
     padding: 0 0 1rem 0;
     font-family: $font-demi;
     color: $White-color;
+
     @include tablet {
       @include desktop_tablet_section-header;
       font-family: $font-demi;
-      padding: 0 1.6rem 0 0;
+      padding: 0 1.2rem 0 0;
     }
   }
 
@@ -352,13 +400,16 @@ footer {
       justify-content: space-between;
     }
   }
+
   &__social {
     @include tablet {
       display: flex;
     }
   }
+
   &__icons {
-    padding: 0 1rem 0 0;
+    padding: 0 1.5rem 0 0;
+
     @include tablet {
       padding: 0 1.5rem 0 0;
     }
@@ -371,6 +422,7 @@ footer {
       padding: 2rem 0 0 0;
     }
   }
+
   &__contact {
     @include tablet {
       padding: 0 2.25rem 0 0;
@@ -379,15 +431,13 @@ footer {
 
   &__contact-name {
     @include sub-header;
-    font-family: $font-demi;
     color: $White-color;
-    @include tablet {
-    }
   }
+
   &__contact-company {
     @include sub-header;
     padding: 0 0 1rem 0;
-    font-family: $font-demi;
+
     @include tablet {
       padding-bottom: 32px;
     }
@@ -395,31 +445,39 @@ footer {
 
   &__contact-info {
     @include body-copy;
-    font-family: $font-regular;
+
     @include tablet {
       @include desktop_tablet_body-copy;
     }
   }
+
   &__contact-email {
     @extend .footer__contact-info;
     padding: 1rem 0 1rem 0;
+
     @include tablet {
       @include desktop_tablet_body-copy;
       padding: 2rem 0 1rem 0;
     }
   }
+
   &__logo {
-    padding: 1.5rem 0 0 0;
+    padding-top: 3rem;
+
     @include tablet {
       order: -1;
       display: flex;
       align-items: center;
+      padding-top: 1.5rem;
     }
   }
+
   &__copyright-info {
     @include labels-buttons;
+    font-size: 0.7rem;
     padding: 1rem 0 1rem 0;
     font-family: $font-regular;
+
     @include tablet {
       @include dekstop_tablet_footer-copy;
       padding: 2rem 0 2rem 0;
