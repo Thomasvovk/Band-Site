@@ -48,7 +48,6 @@ header {
     @include tablet {
       gap: 4rem;
     }
-
     @include tablet {
       @include desktop_tablet_body-copy;
     }
@@ -57,9 +56,15 @@ header {
   &__active {
     border-bottom: 0.1875rem solid $White-color;
   }
-
-  &__link {
-    color: #ffffff;
+  &__active-link {
+    color: $White-color;
+  }
+  &__inactive:hover {
+    border-bottom: 0.1875rem solid $White-color;
+    @include tablet {
+      border-bottom: 0.1875rem solid $White-color;
+      width: 18%;
+    }
   }
 
   &__item {
@@ -157,11 +162,19 @@ header {
       object-fit: cover;
       margin: 0 2rem 0 2rem;
     }
+    @include desktop {
+      width: 80%;
+      height: 30rem;
+      padding: 0 0 2rem 0;
+    }
   }
   &__card {
     @include tablet {
       display: flex;
       flex-wrap: wrap;
+    }
+    @include desktop {
+      justify-content: space-evenly;
     }
   }
 
@@ -176,6 +189,9 @@ header {
       line-height: 2rem;
       margin: 0 2rem 0 2.25rem;
     }
+    @include desktop {
+      margin: 0 12rem 0 6.6rem;
+    }
   }
   &__quote-owner {
     @extend .info__quote;
@@ -185,7 +201,12 @@ header {
       font-size: 1rem;
       padding: 0.5rem 0 0 0;
     }
+    @include desktop {
+      width: 100%;
+      margin: 0 12rem 0 6.5rem;
+    }
   }
+
   &__subheader {
     @include sub-header;
     font-family: $font-regular;
@@ -196,6 +217,9 @@ header {
       margin: 0 2.25rem 0 2.25rem;
       padding: 2.25rem 0 2.25rem 0;
     }
+    @include desktop {
+      margin: 0 12rem 0 6.5rem;
+    }
   }
 
   &__containar {
@@ -203,6 +227,9 @@ header {
       display: flex;
       justify-content: space-between;
       margin: 0 2.25rem 0 2.25rem;
+    }
+    @include desktop {
+      margin: 0 5rem 0 6.5rem;
     }
   }
 
@@ -222,25 +249,32 @@ header {
 
 .gallery {
   background-color: $Alabaster-color;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 0 2.25rem 0;
-  @include tablet {
-    padding: 0 2.25rem 2rem 2.25rem;
-  }
-  @include desktop {
-    width: 63.75rem;
-    margin-left: auto;
-    margin-right: auto;
+  &__section {
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet {
+      padding: 0 2.25rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+      width: 63.75rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__image {
     width: 100%;
     padding: 0 0 1rem 0;
+    filter: grayscale(1);
     @include tablet {
       width: 31%;
       padding: 0;
     }
+  }
+  &__image:hover {
+    filter: none;
   }
   &__title {
     padding: 1rem 0 1rem 1rem;
@@ -273,12 +307,21 @@ header {
 footer {
   background-color: $BandSite-color;
   color: #ffffff;
+  a {
+    text-decoration: none;
+    color: $White-color;
+  }
 }
 
 .footer {
   padding: 0 1rem 0 1rem;
   @include tablet {
     padding: 2.25rem 2.25rem 0 2.25rem;
+  }
+  @include desktop {
+    width: 63.75rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__card {
@@ -346,6 +389,7 @@ footer {
     padding: 0 0 1rem 0;
     font-family: $font-demi;
     @include tablet {
+      padding-bottom: 32px;
     }
   }
 
@@ -361,6 +405,7 @@ footer {
     padding: 1rem 0 1rem 0;
     @include tablet {
       @include desktop_tablet_body-copy;
+      padding: 2rem 0 1rem 0;
     }
   }
   &__logo {
@@ -368,6 +413,7 @@ footer {
     @include tablet {
       order: -1;
       display: flex;
+      align-items: center;
     }
   }
   &__copyright-info {
