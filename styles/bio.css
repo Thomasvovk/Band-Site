@@ -396,6 +396,99 @@ header a {
   }
 }
 
+.comments-section__subheader {
+  padding: 0 0 1rem 1rem;
+  font-family: "Avenir Next Demi";
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .comments-section__subheader {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-family: "Avenir Next Bold";
+    font-family: "Avenir Next Demi";
+    padding: 2.25rem;
+  }
+}
+.comments-section__profile-image {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 2.0625rem;
+}
+@media (min-width: 768px) {
+  .comments-section__profile-image {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+}
+.comments-section__form {
+  margin-left: 0.25rem;
+}
+.comments-section__container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.25rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .comments-section__container {
+    margin-left: 2.25rem;
+    margin-right: 36px;
+    justify-content: center;
+  }
+}
+.comments-section__form-title {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-family: "Avenir Next Bold";
+  padding: 0.5rem 0 0.5rem 0;
+  color: #afafaf;
+  font-family: "Avenir Next Demi";
+}
+.comments-section__form-card {
+  height: 2.25rem;
+  padding: 0.75rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
+  width: 250px;
+}
+@media (min-width: 768px) {
+  .comments-section__form-card {
+    height: 3rem;
+    width: 34.375rem;
+    padding: 1rem;
+  }
+}
+.comments-section__form-card--size {
+  height: 6.25rem;
+  padding-top: 0;
+  padding-bottom: 3.125rem;
+}
+.comments-section__form-button {
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  margin: 1rem 0 0 0;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-family: "Avenir Next Bold";
+  font-family: "Avenir Next Demi";
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .comments-section__form-button {
+    width: 25%;
+  }
+}
+
 footer {
   background-color: #323232;
   color: #ffffff;

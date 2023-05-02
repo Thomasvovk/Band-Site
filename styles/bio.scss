@@ -344,6 +344,92 @@ header {
   }
 }
 
+// Comment Section
+
+.comments-section {
+  &__subheader {
+    padding: 0 0 1rem 1rem;
+    font-family: $font-demi;
+    color: $BandSite-color;
+    @include tablet {
+      @include desktop_tablet_section-header;
+      font-family: $font-demi;
+      padding: 2.25rem;
+    }
+  }
+  &__profile-image {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-top: 2.0625rem;
+    @include tablet {
+      width: 3.125rem;
+      height: 3.125rem;
+    }
+  }
+  &__form {
+    margin-left: 0.25rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include tablet {
+      margin-left: 2.25rem;
+      margin-right: 36px;
+      justify-content: center;
+    }
+  }
+
+  &__form-title {
+    @include labels-buttons;
+    padding: 0.5rem 0 0.5rem 0;
+    color: $Silver-color;
+    font-family: "Avenir Next Demi";
+    @include tablet {
+    }
+  }
+  &__form-card {
+    height: 2.25rem;
+    padding: 0.75rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 0.25rem;
+    background-color: $Alabaster-color;
+    width: 250px;
+    @include tablet {
+      height: 3rem;
+      width: 34.375rem;
+      padding: 1rem;
+    }
+  }
+  &__form-card--size {
+    height: 6.25rem;
+    padding-top: 0;
+    padding-bottom: 3.125rem;
+  }
+
+  &__form-button {
+    display: block;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    margin: 1rem 0 0 0;
+    background-color: $BandSite-color;
+    color: $White-color;
+    @include labels-buttons;
+    font-family: "Avenir Next Demi";
+    font-size: 0.8125rem;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      width: 25%;
+    }
+  }
+}
+
 // Footer Section
 
 footer {
