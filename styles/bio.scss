@@ -360,7 +360,6 @@ header {
     padding: 0;
   }
   &__subheader {
-    padding: 0 0 0 1rem;
     font-family: $font-demi;
     color: $BandSite-color;
     @include tablet {
@@ -373,7 +372,7 @@ header {
   &__profile-image {
     display: inline-block;
     width: 2.5rem;
-    height: 2.5rem;
+    height: 2.3rem;
     border-radius: 50%;
     margin-top: 2.6rem;
     @include tablet {
@@ -384,7 +383,7 @@ header {
   &__form {
     display: flex;
     flex-direction: column;
-    padding-left: 1rem;
+    padding-left: 16px;
   }
 
   &__container {
@@ -479,7 +478,7 @@ header {
     background-color: $Mercury-color;
     gap: 4px;
     width: 2.5rem;
-    height: 2.5rem;
+    height: 2.3rem;
     border-radius: 50%;
   }
   &__card {
