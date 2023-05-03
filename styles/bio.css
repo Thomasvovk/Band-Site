@@ -402,6 +402,7 @@ header a {
 }
 @media (min-width: 768px) {
   .comments-section {
+    margin: 0 2.25rem 0 2.25rem;
     padding: 0 2.25rem 2.25rem 2.25rem;
   }
 }
@@ -449,13 +450,6 @@ header a {
 .comments-section__container {
   display: flex;
   justify-content: center;
-}
-@media (min-width: 768px) {
-  .comments-section__container {
-    margin-left: 2.25rem;
-    margin-right: 36px;
-    justify-content: center;
-  }
 }
 .comments-section__form-title {
   font-size: 0.625rem;
@@ -513,8 +507,23 @@ header a {
 }
 
 .posted-comments {
-  padding: 0 1rem 0 1rem;
+  margin: 0 1rem 0 1rem;
   padding-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .posted-comments {
+    margin: 0 2.25rem 0 2.25rem;
+    padding: 0 2.25rem 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .posted-comments {
+    width: 63.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .posted-comments__user-comment {
   width: 100%;
@@ -522,6 +531,16 @@ header a {
   border-top: 1px solid #e1e1e1;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .posted-comments {
+    width: 90%;
+  }
+}
+@media (min-width: 1280px) {
+  .posted-comments {
+    width: 48%;
+  }
 }
 .posted-comments__placeholder-img {
   display: inline-block;
@@ -552,16 +571,38 @@ header a {
   line-height: 1.125rem;
   font-family: "Avenir Next Regular";
 }
+@media (min-width: 768px) {
+  .posted-comments__text {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: "Avenir Next Regular";
+  }
+}
 .posted-comments__username {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: "Avenir Next Demi";
+}
+@media (min-width: 768px) {
+  .posted-comments__username {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: "Avenir Next Regular";
+    font-family: "Avenir Next Demi";
+  }
 }
 .posted-comments__date {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-family: "Avenir Next Regular";
   color: #afafaf;
+}
+@media (min-width: 768px) {
+  .posted-comments__date {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: "Avenir Next Regular";
+  }
 }
 
 footer {

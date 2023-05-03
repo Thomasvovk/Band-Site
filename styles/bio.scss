@@ -350,6 +350,7 @@ header {
   margin-left: 1rem;
   margin-right: 1rem;
   @include tablet {
+    margin: 0 2.25rem 0 2.25rem;
     padding: 0 2.25rem 2.25rem 2.25rem;
   }
   @include desktop {
@@ -389,11 +390,7 @@ header {
   &__container {
     display: flex;
     justify-content: center;
-
     @include tablet {
-      margin-left: 2.25rem;
-      margin-right: 36px;
-      justify-content: center;
     }
   }
 
@@ -449,8 +446,19 @@ header {
 }
 
 .posted-comments {
-  padding: 0 1rem 0 1rem;
+  margin: 0 1rem 0 1rem;
   padding-bottom: 1.5rem;
+  @include tablet {
+    margin: 0 2.25rem 0 2.25rem;
+    padding: 0 2.25rem 0 2.25rem;
+  }
+  @include desktop {
+    width: 63.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &__user-comment {
     width: 100%;
@@ -458,6 +466,12 @@ header {
     border-top: 1px solid $Mercury-color;
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+  @include tablet {
+    width: 90%;
+  }
+  @include desktop {
+    width: 48%;
   }
 
   &__placeholder-img {
@@ -488,13 +502,23 @@ header {
   &__text {
     width: 100%;
     @include body-copy;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
   }
   &__username {
     @include sub-header;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+      font-family: $font-demi;
+    }
   }
   &__date {
     @include body-copy;
     color: $Silver-color;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
   }
 }
 
