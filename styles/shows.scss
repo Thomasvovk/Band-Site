@@ -1,0 +1,402 @@
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/fonts" as *;
+@use "../styles/partials/global" as *;
+
+// Header Section
+
+header {
+  background-color: $BandSite-color;
+  padding: 1rem 0 0 0;
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $Mercury-color;
+  }
+}
+
+.header {
+  @include tablet {
+    display: flex;
+    gap: 4rem;
+    padding: 2.25rem 0 0 1rem;
+  }
+
+  @include desktop {
+    padding-left: 7rem;
+  }
+  &__logo-img {
+    display: flex;
+    padding: 0 0 0.5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    @include tablet {
+      width: 7.5rem;
+    }
+  }
+
+  &__logo {
+    @include tablet {
+      padding: 0 0 1rem 1rem;
+    }
+
+    @include desktop {
+      padding-left: 0;
+    }
+  }
+
+  &__list {
+    @include sub-header;
+    display: flex;
+
+    @include tablet {
+      @include desktop_tablet_body-copy;
+      gap: 4rem;
+    }
+  }
+
+  &__active {
+    border-bottom: 0.1875rem solid $White-color;
+  }
+
+  &__active-link {
+    color: $White-color;
+  }
+
+  &__inactive:hover {
+    border-bottom: 0.1875rem solid $White-color;
+
+    @include tablet {
+      border-bottom: 0.1875rem solid $White-color;
+      width: 18%;
+    }
+  }
+
+  &__item {
+    @include desktop_tablet_body-copy;
+    text-align: center;
+    color: $Mercury-color;
+    width: 50%;
+    padding-bottom: 0.5rem;
+
+    @include tablet {
+      padding: 0 2.25rem 0 0;
+      width: 18%;
+      padding-bottom: 1.4rem;
+    }
+  }
+}
+
+// Hero Section
+
+.hero {
+  margin: 0 0 1.5rem 0;
+  width: 100%;
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../assets/Images/hero-shows.jpg);
+
+  @include tablet {
+    height: 50vh;
+    margin: 0 0 3rem 0;
+  }
+
+  @include desktop {
+    height: 70vh;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 30vh;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet {
+      height: 50vh;
+    }
+    @include desktop {
+      height: 70vh;
+    }
+  }
+
+  &__album {
+    order: -2;
+    @include body-copy;
+    font-size: 0.875rem;
+    color: $White-color;
+    padding: 1.5rem 0 1.5rem 0;
+    @include tablet {
+      @include desktop_tablet_subheader;
+      padding-top: 3rem;
+    }
+  }
+
+  &__title {
+    @include page-header;
+    width: 70%;
+    color: $White-color;
+    font-family: $font-demi;
+    order: -1;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      @include desktop_tablet_page-header;
+      font-family: $font-demi;
+      padding-bottom: 3rem;
+    }
+
+    @include desktop {
+      padding-left: 7rem;
+    }
+  }
+
+  &__music-container {
+    display: flex;
+    justify-content: flex-start;
+    @include tablet {
+      width: 50%;
+    }
+  }
+}
+
+.shows {
+  @include tablet {
+    padding-bottom: 2.25rem;
+  }
+  &__title {
+    font-family: $font-demi;
+    color: $BandSite-color;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    @include tablet {
+      padding-left: 2rem;
+    }
+  }
+  &__all-shows {
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e1e1e1;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__info-subheader {
+    @include labels-buttons;
+    color: $Silver-color;
+    font-family: "Avenir Next Demi";
+    @include tablet {
+      @include desktop_tablet_body-copy;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+  }
+  &__info-subheader--hidden {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__container {
+    padding-bottom: 1rem;
+    @include tablet {
+      padding-top: 16px;
+    }
+  }
+  &__date {
+    @include sub-header;
+  }
+  &__info {
+    @include body-copy;
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
+  }
+
+  &__button-container {
+    width: 100%;
+    @include tablet {
+      display: flex;
+      justify-content: end;
+      width: 22%;
+      padding-top: 3rem;
+    }
+  }
+
+  &__buy-button {
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: $BandSite-color;
+    color: $White-color;
+    @include labels-buttons;
+    font-family: "Avenir Next Demi";
+    font-size: 0.8125rem;
+    @include tablet {
+      //   width: 25%;
+    }
+  }
+  &__button-container--center {
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+}
+
+// Footer Section
+
+footer {
+  background-color: $BandSite-color;
+  color: #ffffff;
+
+  a {
+    text-decoration: none;
+    color: $White-color;
+  }
+}
+
+.footer {
+  padding: 0 1rem 0 1rem;
+
+  @include tablet {
+    padding: 2.25rem 2.25rem 0 2.25rem;
+  }
+
+  @include desktop {
+    width: 63.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__card {
+    padding: 1.5rem 0 1rem 0;
+
+    @include tablet {
+      order: -2;
+      flex: 1 0 50%;
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  &__title {
+    @include section-header;
+    padding: 0 0 1rem 0;
+    font-family: $font-demi;
+    color: $White-color;
+
+    @include tablet {
+      @include desktop_tablet_section-header;
+      font-family: $font-demi;
+      padding: 0 1.2rem 0 0;
+    }
+  }
+
+  &__information {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__social {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__icons {
+    padding: 0 1.5rem 0 0;
+
+    @include tablet {
+      padding: 0 1.5rem 0 0;
+    }
+  }
+
+  &__contacts {
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 2rem 0 0 0;
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      padding: 0 2.25rem 0 0;
+    }
+  }
+
+  &__contact-name {
+    @include sub-header;
+    color: $White-color;
+  }
+
+  &__contact-company {
+    @include sub-header;
+    padding: 0 0 1rem 0;
+
+    @include tablet {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__contact-info {
+    @include body-copy;
+
+    @include tablet {
+      @include desktop_tablet_body-copy;
+    }
+  }
+
+  &__contact-email {
+    @extend .footer__contact-info;
+    padding: 1rem 0 1rem 0;
+
+    @include tablet {
+      @include desktop_tablet_body-copy;
+      padding: 2rem 0 1rem 0;
+    }
+  }
+
+  &__logo {
+    padding-top: 3rem;
+
+    @include tablet {
+      order: -1;
+      display: flex;
+      align-items: center;
+      padding-top: 1.5rem;
+    }
+  }
+
+  &__copyright-info {
+    @include labels-buttons;
+    font-size: 0.7rem;
+    padding: 1rem 0 1rem 0;
+    font-family: $font-regular;
+
+    @include tablet {
+      @include dekstop_tablet_footer-copy;
+      padding: 2rem 0 2rem 0;
+    }
+  }
+}

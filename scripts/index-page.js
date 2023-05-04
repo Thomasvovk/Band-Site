@@ -42,17 +42,17 @@ function displayComment(comments) {
     const paragraph = document.createElement("p");
     paragraph.classList.add("posted-comments__username");
     newDiv4.appendChild(paragraph);
-    paragraph.innerHTML = comment.name;
+    paragraph.innerText = comment.name;
 
     const paragraph2 = document.createElement("p");
     paragraph2.classList.add("posted-comments__date");
     newDiv4.appendChild(paragraph2);
-    paragraph2.innerHTML = comment.timestamp;
+    paragraph2.innerText = comment.timestamp;
 
     const paragraph3 = document.createElement("p");
     paragraph3.classList.add("posted-comments__text");
     newDiv3.appendChild(paragraph3);
-    paragraph3.innerHTML = comment.text;
+    paragraph3.innerText = comment.text;
   });
 }
 
