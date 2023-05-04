@@ -87,6 +87,8 @@ header {
       width: 18%;
       padding-bottom: 1.4rem;
     }
+    @include desktop {
+    }
   }
 }
 
@@ -121,12 +123,24 @@ header {
 
     @include tablet {
       height: 50vh;
+      padding-left: 2rem;
     }
     @include desktop {
       height: 70vh;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+      justify-content: center;
     }
   }
-
+  &__name-container {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      width: 40%;
+    }
+  }
   &__album {
     order: -2;
     @include body-copy;
@@ -154,7 +168,6 @@ header {
     }
 
     @include desktop {
-      padding-left: 7rem;
     }
   }
 
@@ -164,12 +177,29 @@ header {
     @include tablet {
       width: 50%;
     }
+    @include desktop {
+      width: 40%;
+    }
   }
 }
 
 .shows {
   @include tablet {
     padding-bottom: 2.25rem;
+    @include desktop {
+      width: 63.75rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  &__box {
+    width: 40%;
+  }
+  &__box-all-shows {
+    width: 100%;
   }
   &__title {
     font-family: $font-demi;
@@ -177,6 +207,8 @@ header {
     padding-bottom: 1rem;
     padding-left: 1rem;
     @include tablet {
+      @include desktop_tablet_section-header;
+      font-family: "Avenir Next Demi";
       padding-left: 2rem;
     }
   }
@@ -218,6 +250,7 @@ header {
     padding-bottom: 1rem;
     @include tablet {
       padding-top: 16px;
+      width: 20%;
     }
   }
   &__date {
