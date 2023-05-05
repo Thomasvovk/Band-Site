@@ -754,4 +754,12 @@ footer a {
     font-family: "Avenir Next Regular";
     padding: 2rem 0 2rem 0;
   }
+}
+
+input:focus {
+  border: 1px solid #323232;
+}
+
+input:error {
+  border: 1px solid #d22d2d;
 }/*# sourceMappingURL=bio.css.map */

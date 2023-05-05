@@ -17,164 +17,91 @@ const comments = [
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity.Can't get enough.",
   },
 ];
+const postedComments = document.getElementById("comments");
+function displayComment(comment) {
+  postedComments.classList.add("posted-comments");
 
-function displayComment(comments) {
-  const container = document.getElementById("comments");
-  container.classList.add("posted-comments");
+  const userComment = document.createElement("div");
+  userComment.classList.add("posted-comments__user-comment");
+  postedComments.appendChild(userComment);
 
-  comments.forEach((comment) => {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("posted-comments__user-comment");
-    container.appendChild(newDiv);
+  const placeholder = document.createElement("div");
+  placeholder.classList.add("posted-comments__placeholder-img");
+  userComment.appendChild(placeholder);
 
-    const newDiv2 = document.createElement("div");
-    newDiv2.classList.add("posted-comments__placeholder-img");
-    newDiv.appendChild(newDiv2);
+  const commentsCard = document.createElement("div");
+  commentsCard.classList.add("posted-comments__card");
+  userComment.appendChild(commentsCard);
 
-    const newDiv3 = document.createElement("div");
-    newDiv3.classList.add("posted-comments__card");
-    newDiv.appendChild(newDiv3);
+  const commentsDate = document.createElement("div");
+  commentsDate.classList.add("posted-comments__name-date");
+  commentsCard.appendChild(commentsDate);
 
-    const newDiv4 = document.createElement("div");
-    newDiv4.classList.add("posted-comments__name-date");
-    newDiv3.appendChild(newDiv4);
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("posted-comments__username");
+  commentsDate.appendChild(paragraph);
+  paragraph.innerText = comment.name;
 
-    const paragraph = document.createElement("p");
-    paragraph.classList.add("posted-comments__username");
-    newDiv4.appendChild(paragraph);
-    paragraph.innerText = comment.name;
+  const paragraph2 = document.createElement("p");
+  paragraph2.classList.add("posted-comments__date");
+  commentsDate.appendChild(paragraph2);
+  paragraph2.innerText = comment.timestamp;
 
-    const paragraph2 = document.createElement("p");
-    paragraph2.classList.add("posted-comments__date");
-    newDiv4.appendChild(paragraph2);
-    paragraph2.innerText = comment.timestamp;
-
-    const paragraph3 = document.createElement("p");
-    paragraph3.classList.add("posted-comments__text");
-    newDiv3.appendChild(paragraph3);
-    paragraph3.innerText = comment.text;
-  });
+  const paragraph3 = document.createElement("p");
+  paragraph3.classList.add("posted-comments__text");
+  commentsCard.appendChild(paragraph3);
+  paragraph3.innerText = comment.text;
 }
 
-displayComment(comments);
+comments.forEach((comment) => {
+  displayComment(comment);
+});
 
-// const comments = [
-//   {
-//     name: "Connor Walton",
-//     timestamp: "02/17/2021",
-//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
+const form = document.querySelector(".comments-section__form");
 
-//   {
-//     name: "Emilie Beach",
-//     timestamp: "01/09/2021",
-//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//   {
-//     name: "Miles Acosta",
-//     timestamp: "12/20/2020",
-//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity.Can't get enough.",
-//   },
-// ];
+  const username = document.getElementById("name");
+  const comment = document.getElementById("comment");
 
-// function displayComment(comments) {
-//   const container0 = document.getElementById("comments");
-//   container0.classList.add("posted-comments");
+  comments.unshift({
+    name: username.value,
+    timestamp: "01/09/2021",
+    text: comment.value,
+  });
 
-//   const container = document.getElementById("comments");
-//   const newDiv = document.createElement("div");
-//   newDiv.classList.add("posted-comments__user-comment");
-//   container.appendChild(newDiv);
+  postedComments.innerHTML = "";
 
-//   const container2 = document.querySelector(".posted-comments__user-comment");
-//   const newDiv2 = document.createElement("div");
-//   newDiv2.classList.add("posted-comments__placeholder-img");
-//   container2.appendChild(newDiv2);
+  comments.forEach((comment) => {
+    displayComment(comment);
+  });
+  username.value = "";
+  comment.value = "";
+});
 
-//   const container3 = document.querySelector(".posted-comments__user-comment");
-//   const newDiv3 = document.createElement("div");
-//   newDiv3.classList.add("posted-comments__card");
-//   container3.appendChild(newDiv3);
+// Trying to figure it out
 
-//   const container4 = document.querySelector(".posted-comments__card");
-//   const newDiv4 = document.createElement("div");
-//   newDiv4.classList.add("posted-comments__name-date");
-//   container4.appendChild(newDiv4);
+// // --------
 
-//   const container5 = document.querySelector(".posted-comments__name-date");
-//   const paragraph = document.createElement("p");
-//   paragraph.classList.add("posted-comments__username");
-//   container5.appendChild(paragraph);
+//   // Extract values from input fields
+//   const name = document.querySelector("#name").value;
+//   const comment = document.querySelector("#comment").value;
+//   const timestamp = new Date().toLocaleDateString();
 
-//   const element = document.querySelector(".posted-comments__username");
-//   element.innerHTML = comments.name;
+//   // Create new comment object
+//   const newComment = { name, timestamp, text: comment };
 
-//   const container6 = document.querySelector(".posted-comments__name-date");
-//   const paragraph2 = document.createElement("p");
-//   paragraph2.classList.add("posted-comments__date");
-//   container6.appendChild(paragraph2);
+//   // Add new comment to comments array
+//   comments.push(newComment);
 
-//   const element2 = document.querySelector(".posted-comments__date");
-//   element2.innerHTML = comments.timestamp;
+//   // Clear form fields
+//   document.querySelector("#name").value = "";
+//   document.querySelector("#comment").value = "";
 
-//   const container7 = document.querySelector(".posted-comments__card");
-//   const paragraph3 = document.createElement("p");
-//   paragraph3.classList.add("posted-comments__text");
-//   container7.appendChild(paragraph3);
+//   // Update displayed comments
+//   displayComment(comments);
+// });
 
-//   const element3 = document.querySelector(".posted-comments__text");
-//   element3.innerHTML = comments.text;
-// }
-
+// // Display initial comments
 // displayComment(comments);
-
-/* <section class="posted-comments">
-       <0div class="posted-comments__user-comment">
-         <0div class="posted-comments__placeholder-img"></div>
-         <0div class="posted-comments__card">
-            <0div class="posted-comments__name-date">
-              <0p class="posted-comments__username">Connor Walton</p>
-              <0p class="posted-comments__date">02/17/2021</p>
-            </div>
-            <0p class="posted-comments__text">
-              This is art. This is inexplicable magic expressed in the purest
-              way, everything that makes up this majestic work deserves
-              reverence. Let us appreciate this for what it is and what it
-              contains
-            </p>
-          </div>
-        </div>
-
-        <div class="posted-comments__user-comment">
-          <div class="posted-comments__placeholder-img"></div>
-          <div class="posted-comments__card">
-            <div class="posted-comments__name-date">
-              <p class="posted-comments__username">Connor Walton</p>
-              <p class="posted-comments__date">02/17/2021</p>
-            </div>
-            <p class="posted-comments__text">
-              This is art. This is inexplicable magic expressed in the purest
-              way, everything that makes up this majestic work deserves
-              reverence. Let us appreciate this for what it is and what it
-              contains
-            </p>
-          </div>
-        </div>
-
-        <div class="posted-comments__user-comment">
-          <div class="posted-comments__placeholder-img"></div>
-          <div class="posted-comments__card">
-            <div class="posted-comments__name-date">
-              <p class="posted-comments__username">Connor Walton</p>
-              <p class="posted-comments__date">02/17/2021</p>
-            </div>
-            <p class="posted-comments__text">
-              This is art. This is inexplicable magic expressed in the purest
-              way, everything that makes up this majestic work deserves
-              reverence. Let us appreciate this for what it is and what it
-              contains
-            </p>
-          </div>
-        </div>
-      </section> */
