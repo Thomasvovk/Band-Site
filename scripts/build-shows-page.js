@@ -36,6 +36,8 @@ const shows = [
   },
 ];
 
+// Structure for Shows Section
+
 const concertSection = document.getElementById("shows");
 
 const titleContainer = document.createElement("div");
@@ -50,6 +52,8 @@ sectionTitle.textContent = "Shows";
 const concertsContainer = document.createElement("div");
 concertsContainer.classList.add("shows__box-all-shows");
 concertSection.appendChild(concertsContainer);
+
+// Loop for each Object
 
 function displayshows(shows) {
   shows.forEach((show) => {
@@ -118,16 +122,8 @@ function displayshows(shows) {
 
 displayshows(shows);
 
-// function selectRow(shows) {
-//   const rowSelected = document.querySelectorAll(".shows__all-shows");
-//   rowSelected.forEach((row) => {
-//     row.addEventListener("click", () => {
-//       row.classList.add("shows__all-shows--selected");
-//     });
-//   });
-// }
-
-// selectRow(shows);
+// clicking on a individual row make that row "selected"
+// the row should stay selected until another row is clicked
 
 function selectRow(shows) {
   const rows = document.querySelectorAll(".shows__all-shows");
@@ -146,7 +142,3 @@ function selectRow(shows) {
 }
 
 selectRow(shows);
-
-// Pseudocode
-// 1. clicking on a individual row make that row "selected"
-// 2. the row should stay selected until another row is clicked

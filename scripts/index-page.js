@@ -17,6 +17,9 @@ const comments = [
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity.Can't get enough.",
   },
 ];
+
+// Structure for Comment Section
+
 const postedComments = document.getElementById("comments");
 function displayComment(comment) {
   postedComments.classList.add("posted-comments");
@@ -53,9 +56,14 @@ function displayComment(comment) {
   paragraph3.innerText = comment.text;
 }
 
+// Loop for each Object
+
 comments.forEach((comment) => {
   displayComment(comment);
 });
+
+// Creating an event handlet when someone submit a comment,
+// it gathar data from the form and adding it to an array front as an object and displays in comment section.
 
 const form = document.querySelector(".comments-section__form");
 
@@ -64,6 +72,7 @@ form.addEventListener("submit", (event) => {
 
   const username = document.getElementById("name");
   const comment = document.getElementById("comment");
+  const timestamp = new Date().toLocaleDateString();
 
   comments.unshift({
     name: username.value,
@@ -79,5 +88,3 @@ form.addEventListener("submit", (event) => {
   username.value = "";
   comment.value = "";
 });
-
-const timestamp = new Date().toLocaleDateString();
