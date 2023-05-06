@@ -118,28 +118,35 @@ function displayshows(shows) {
 
 displayshows(shows);
 
-// // //Second one need a loop
+// function selectRow(shows) {
+//   const rowSelected = document.querySelectorAll(".shows__all-shows");
+//   rowSelected.forEach((row) => {
+//     row.addEventListener("click", () => {
+//       row.classList.add("shows__all-shows--selected");
+//     });
+//   });
+// }
 
-// <0section id="shows" class="shows">
-//         <0div class="shows__box">
-//           <0h2 class="shows__title">Shows</h2>
-//         <0/div>
-//         <0div class="shows__box-all-shows">
-//           <0div class="shows__all-shows">
-//             <0div class="shows__container shows__date-container">
-//               <0h3 class="shows__info-subheader">DATE</h3>
-//               <0p class="shows__date">Mon Sept 06 2021</p>
-//             </div>
-//             <0div class="shows__container shows__venue-container">
-//               <0h3 class="shows__info-subheader">VENUE</h3>
-//               <0p class="shows__info">Ronald Lane</p>
-//             </div>
-//             <0div class="shows__container shows__location-container">
-//               <0h3 class="shows__info-subheader ">LOCATION</h3>
-//               <0p class="shows__info">San Francisco, CA</p>
-//             </div>
-//             <0div class="shows__button-container">
-//               <0button class="shows__buy-button">BUY TICKETS</button>
-//             </div>
-//   </div>
-//       </section>
+// selectRow(shows);
+
+function selectRow(shows) {
+  const rows = document.querySelectorAll(".shows__all-shows");
+  let selectedRow = null;
+
+  rows.forEach((row) => {
+    row.addEventListener("click", () => {
+      if (selectedRow) {
+        selectedRow.classList.remove("shows__all-shows--selected");
+      }
+
+      row.classList.add("shows__all-shows--selected");
+      selectedRow = row;
+    });
+  });
+}
+
+selectRow(shows);
+
+// Pseudocode
+// 1. clicking on a individual row make that row "selected"
+// 2. the row should stay selected until another row is clicked

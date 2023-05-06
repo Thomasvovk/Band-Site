@@ -67,7 +67,7 @@ form.addEventListener("submit", (event) => {
 
   comments.unshift({
     name: username.value,
-    timestamp: "01/09/2021",
+    timestamp: timestamp,
     text: comment.value,
   });
 
@@ -80,28 +80,4 @@ form.addEventListener("submit", (event) => {
   comment.value = "";
 });
 
-// Trying to figure it out
-
-// // --------
-
-//   // Extract values from input fields
-//   const name = document.querySelector("#name").value;
-//   const comment = document.querySelector("#comment").value;
-//   const timestamp = new Date().toLocaleDateString();
-
-//   // Create new comment object
-//   const newComment = { name, timestamp, text: comment };
-
-//   // Add new comment to comments array
-//   comments.push(newComment);
-
-//   // Clear form fields
-//   document.querySelector("#name").value = "";
-//   document.querySelector("#comment").value = "";
-
-//   // Update displayed comments
-//   displayComment(comments);
-// });
-
-// // Display initial comments
-// displayComment(comments);
+const timestamp = new Date().toLocaleDateString();
