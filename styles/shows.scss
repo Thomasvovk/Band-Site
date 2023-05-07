@@ -33,6 +33,7 @@ header {
     padding: 0 0 0.5rem 0;
     margin-left: auto;
     margin-right: auto;
+
     @include tablet {
       width: 7.5rem;
     }
@@ -54,12 +55,20 @@ header {
 
     @include tablet {
       @include desktop_tablet_body-copy;
-      gap: 4rem;
+      width: 100%;
+      justify-content: space-between;
+      // gap: 4rem;
     }
   }
 
   &__active {
     border-bottom: 0.1875rem solid $White-color;
+  }
+
+  &__inactive {
+    @include tablet {
+      width: 25%;
+    }
   }
 
   &__active-link {
@@ -71,7 +80,7 @@ header {
 
     @include tablet {
       border-bottom: 0.1875rem solid $White-color;
-      width: 18%;
+      width: 35%;
     }
   }
 
@@ -84,11 +93,8 @@ header {
 
     @include tablet {
       padding: 0 2.25rem 0 0;
-      width: 18%;
+      width: 25%;
       padding-bottom: 1.4rem;
-    }
-    @include desktop {
-      width: 20%;
     }
   }
 }
@@ -138,8 +144,9 @@ header {
   &__name-container {
     display: flex;
     flex-direction: column;
+
     @include desktop {
-      width: 40%;
+      width: 50%;
     }
   }
   &__album {
@@ -148,6 +155,7 @@ header {
     font-size: 0.875rem;
     color: $White-color;
     padding: 1.5rem 0 1.5rem 0;
+
     @include tablet {
       @include desktop_tablet_subheader;
       padding-top: 3rem;
@@ -169,24 +177,46 @@ header {
     }
 
     @include desktop {
+      width: 80%;
     }
   }
 
   &__music-container {
     display: flex;
     justify-content: flex-start;
+    width: 100%;
+    height: 110px;
+
     @include tablet {
-      width: 50%;
+      width: 80%;
+      height: 150px;
     }
     @include desktop {
-      width: 40%;
+      width: 400px;
+      height: 130px;
     }
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 110px;
+  @include tablet {
+    width: 80%;
+    height: 150px;
+  }
+  @include desktop {
+    width: 400px;
+    height: 130px;
   }
 }
 
 .shows {
   @include tablet {
     padding-bottom: 2.25rem;
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+
     @include desktop {
       width: 63.75rem;
       margin-left: auto;
@@ -207,6 +237,7 @@ header {
     color: $BandSite-color;
     padding-bottom: 1rem;
     padding-left: 1rem;
+
     @include tablet {
       @include desktop_tablet_section-header;
       font-family: "Avenir Next Demi";
@@ -218,12 +249,13 @@ header {
     flex-direction: column;
     margin-bottom: 1rem;
     border-bottom: 1px solid #e1e1e1;
+
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       border-bottom: 1px solid #e1e1e1;
-      padding: 1.5rem 1.125rem 1.5rem 1.125rem;
+      padding: 0 1.125rem 1.5rem 1.125rem;
       margin-bottom: 0.5rem;
     }
   }
@@ -236,20 +268,18 @@ header {
     @include labels-buttons;
     color: $Silver-color;
     font-family: "Avenir Next Demi";
+
     @include tablet {
       @include desktop_tablet_body-copy;
       padding-bottom: 1rem;
       padding-top: 1rem;
-    }
-  }
-  &__info-subheader--hidden {
-    @include tablet {
       display: none;
     }
   }
 
   &__container {
     padding-bottom: 1rem;
+
     @include tablet {
       padding-top: 16px;
       width: 20%;
@@ -260,6 +290,7 @@ header {
   }
   &__info {
     @include body-copy;
+
     @include tablet {
       @include desktop_tablet_body-copy;
     }
@@ -267,6 +298,7 @@ header {
 
   &__button-container {
     width: 100%;
+
     @include tablet {
       display: flex;
       justify-content: end;
@@ -284,6 +316,7 @@ header {
     @include labels-buttons;
     font-family: "Avenir Next Demi";
     font-size: 0.8125rem;
+
     @include tablet {
       //   width: 25%;
     }

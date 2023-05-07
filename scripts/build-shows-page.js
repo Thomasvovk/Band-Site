@@ -53,7 +53,7 @@ const concertsContainer = document.createElement("div");
 concertsContainer.classList.add("shows__box-all-shows");
 concertSection.appendChild(concertsContainer);
 
-// Loop for each Object
+// Loop for each Show
 
 function displayshows(shows) {
   shows.forEach((show) => {
@@ -68,7 +68,6 @@ function displayshows(shows) {
 
     const dateHeading = document.createElement("h3");
     dateHeading.classList.add("shows__info-subheader");
-    // dateHeading.classList.add("shows__info-subheader--hidden");
     dateInfo.appendChild(dateHeading);
     dateHeading.innerText = "DATE";
 
@@ -84,7 +83,6 @@ function displayshows(shows) {
 
     const venueHeading = document.createElement("h3");
     venueHeading.classList.add("shows__info-subheader");
-    // venueHeading.classList.add("shows__info-subheader--hidden");
     venueInfo.appendChild(venueHeading);
     venueHeading.innerText = "VENUE";
 
@@ -100,7 +98,6 @@ function displayshows(shows) {
 
     const locationHeading = document.createElement("h3");
     locationHeading.classList.add("shows__info-subheader");
-    // locationHeading.classList.add("shows__info-subheader--hidden");
     locationInfo.appendChild(locationHeading);
     locationHeading.innerText = "LOCATION";
 
