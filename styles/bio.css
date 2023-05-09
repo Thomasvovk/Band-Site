@@ -434,6 +434,8 @@ header a {
   height: 2.3rem;
   border-radius: 50%;
   margin-top: 2.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 768px) {
   .comments-section__profile-image {

@@ -1,22 +1,15 @@
-const comments = [
-  {
-    name: "Connor Walton",
-    timestamp: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
+const key = "ac75bb68-cbf2-4fe0-88ca-f67b40e88c1b";
+const url = "https://project-1-api.herokuapp.com/comments/";
 
-  {
-    name: "Emilie Beach",
-    timestamp: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
+function displayEveryting() {
+  axios.get(`${url}?api_key=${key}`).then((response) => {
+    response.data.forEach((comment) => {
+      displayComment(comment);
+    });
+  });
+}
 
-  {
-    name: "Miles Acosta",
-    timestamp: "12/20/2020",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity.Can't get enough.",
-  },
-];
+displayEveryting();
 
 // Structure for Comment Section
 
@@ -53,14 +46,8 @@ function displayComment(comment) {
   const paragraph3 = document.createElement("p");
   paragraph3.classList.add("posted-comments__text");
   commentsCard.appendChild(paragraph3);
-  paragraph3.innerText = comment.text;
+  paragraph3.innerText = comment.comment;
 }
-
-// Loop for each Object
-
-comments.forEach((comment) => {
-  displayComment(comment);
-});
 
 // Creating an event handlet when someone submit a comment,
 // it gathar data from the form and adding it to an array front as an object and displays in comment section.
@@ -72,19 +59,25 @@ form.addEventListener("submit", (event) => {
 
   const username = document.getElementById("name");
   const comment = document.getElementById("comment");
-  const timestamp = new Date().toLocaleDateString();
+  const timestamp = new Date();
 
-  comments.unshift({
-    name: username.value,
-    timestamp: timestamp,
-    text: comment.value,
-  });
+  // comments.unshift({
+  //   name: username.value,
+  //   timestamp: timestamp,
+  //   comment: comment.value,
+  // });
+
+  axios
+    .post(`${url}?api_key=${key}`, {
+      name: username.value,
+      comment: comment.value,
+    })
+    .then(() => {
+      displayEveryting();
+    });
 
   postedComments.innerHTML = "";
 
-  comments.forEach((comment) => {
-    displayComment(comment);
-  });
   username.value = "";
   comment.value = "";
 });
