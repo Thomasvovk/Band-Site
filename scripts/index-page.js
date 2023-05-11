@@ -1,6 +1,7 @@
 const key = "ac75bb68-cbf2-4fe0-88ca-f67b40e88c1b";
 const url = "https://project-1-api.herokuapp.com/comments/";
 
+// Displaying all the comments from API
 function displayEveryting() {
   axios.get(`${url}?api_key=${key}`).then((response) => {
     response.data.forEach((comment) => {
@@ -13,7 +14,7 @@ displayEveryting();
 
 // Structure for Comment Section
 
-const postedComments = document.getElementById("comments");
+const postedComments = document.querySelector(".comments");
 function displayComment(comment) {
   postedComments.classList.add("posted-comments");
 
@@ -41,7 +42,7 @@ function displayComment(comment) {
   const paragraph2 = document.createElement("p");
   paragraph2.classList.add("posted-comments__date");
   commentsDate.appendChild(paragraph2);
-  paragraph2.innerText = comment.timestamp;
+  paragraph2.innerText = new Date(comment.timestamp).toDateString();
 
   const paragraph3 = document.createElement("p");
   paragraph3.classList.add("posted-comments__text");
@@ -50,7 +51,7 @@ function displayComment(comment) {
 }
 
 // Creating an event handlet when someone submit a comment,
-// it gathar data from the form and adding it to an array front as an object and displays in comment section.
+// it gathar data from the form and adding it to API.
 
 const form = document.querySelector(".comments-section__form");
 
@@ -59,13 +60,6 @@ form.addEventListener("submit", (event) => {
 
   const username = document.getElementById("name");
   const comment = document.getElementById("comment");
-  const timestamp = new Date();
-
-  // comments.unshift({
-  //   name: username.value,
-  //   timestamp: timestamp,
-  //   comment: comment.value,
-  // });
 
   axios
     .post(`${url}?api_key=${key}`, {

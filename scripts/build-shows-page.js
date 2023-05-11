@@ -11,47 +11,9 @@ function displayEverything() {
 
 displayEverything();
 
-// const shows = [
-//   {
-//     date: "Mon Sept 06 2021",
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-
-//   {
-//     date: "Tue Sept 21 2021",
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-
-//   {
-//     date: "Fri Oct 15 2021",
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-
-//   {
-//     date: "Sat Nov 06 2021",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-
-//   {
-//     date: "Fri Nov 26 2021",
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-
-//   {
-//     date: "Wed Dec 15 2021",
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 // Structure for Shows Section
 
-const concertSection = document.getElementById("shows");
+const concertSection = document.querySelector(".shows");
 
 const titleContainer = document.createElement("div");
 titleContainer.classList.add("shows__box");
@@ -65,6 +27,25 @@ sectionTitle.textContent = "Shows";
 const concertsContainer = document.createElement("div");
 concertsContainer.classList.add("shows__box-all-shows");
 concertSection.appendChild(concertsContainer);
+
+const subheaderBlock = document.createElement("div");
+subheaderBlock.classList.add("shows__subheader--block");
+concertsContainer.appendChild(subheaderBlock);
+
+const sectionSubtitleDate = document.createElement("div");
+sectionSubtitleDate.classList.add("shows__info-subheader--display");
+subheaderBlock.appendChild(sectionSubtitleDate);
+sectionSubtitleDate.textContent = "DATE";
+
+const sectionSubtitleVenue = document.createElement("div");
+sectionSubtitleVenue.classList.add("shows__info-subheader--display");
+subheaderBlock.appendChild(sectionSubtitleVenue);
+sectionSubtitleVenue.textContent = "VENUE";
+
+const sectionSubtitleLocation = document.createElement("div");
+sectionSubtitleLocation.classList.add("shows__info-subheader--display");
+subheaderBlock.appendChild(sectionSubtitleLocation);
+sectionSubtitleLocation.innerText = "LOCATION";
 
 // Loop for each Show
 
@@ -86,7 +67,7 @@ function displayshows(show) {
   const dateData = document.createElement("p");
   dateData.classList.add("shows__date");
   dateInfo.appendChild(dateData);
-  dateData.innerText = show.date;
+  dateData.innerText = new Date(show.date).toDateString();
 
   const venueInfo = document.createElement("div");
   venueInfo.classList.add("shows__container");
@@ -131,7 +112,7 @@ function displayshows(show) {
 // clicking on a individual row make that row "selected"
 // the row should stay selected until another row is clicked
 
-function selectRow(shows) {
+function selectRow() {
   const rows = document.querySelectorAll(".shows__all-shows");
   let selectedRow = null;
 
@@ -147,4 +128,4 @@ function selectRow(shows) {
   });
 }
 
-selectRow(shows);
+selectRow();

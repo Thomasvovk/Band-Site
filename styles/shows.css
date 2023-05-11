@@ -294,9 +294,9 @@ iframe {
   .shows__all-shows {
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     border-bottom: 1px solid #e1e1e1;
-    padding: 0 1.125rem 1.5rem 1.125rem;
+    padding: 1rem 1.125rem 1rem 1.125rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -319,6 +319,30 @@ iframe {
     padding-top: 1rem;
     display: none;
   }
+}
+.shows__info-subheader--display {
+  display: none;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-family: "Avenir Next Bold";
+  color: #afafaf;
+  font-family: "Avenir Next Demi";
+}
+@media (min-width: 768px) {
+  .shows__info-subheader--display {
+    width: 25%;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: "Avenir Next Regular";
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+    display: block;
+  }
+}
+.shows__subheader--block {
+  display: flex;
 }
 .shows__container {
   padding-bottom: 1rem;
@@ -354,7 +378,6 @@ iframe {
     display: flex;
     justify-content: end;
     width: 22%;
-    padding-top: 3rem;
   }
 }
 .shows__buy-button {

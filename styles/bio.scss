@@ -446,6 +446,8 @@ header {
 }
 
 .posted-comments {
+  display: flex;
+  flex-direction: column-reverse;
   margin: 0 1rem 0 1rem;
   padding-bottom: 1.5rem;
   @include tablet {

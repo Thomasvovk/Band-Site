@@ -253,9 +253,9 @@ iframe {
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       border-bottom: 1px solid #e1e1e1;
-      padding: 0 1.125rem 1.5rem 1.125rem;
+      padding: 1rem 1.125rem 1rem 1.125rem;
       margin-bottom: 0.5rem;
     }
   }
@@ -275,6 +275,27 @@ iframe {
       padding-top: 1rem;
       display: none;
     }
+  }
+
+  &__info-subheader--display {
+    display: none;
+    @include labels-buttons;
+    color: $Silver-color;
+    font-family: "Avenir Next Demi";
+
+    @include tablet {
+      width: 25%;
+      @include desktop_tablet_body-copy;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+      padding-right: 3rem;
+      display: block;
+    }
+  }
+
+  &__subheader--block {
+    display: flex;
   }
 
   &__container {
@@ -303,7 +324,6 @@ iframe {
       display: flex;
       justify-content: end;
       width: 22%;
-      padding-top: 3rem;
     }
   }
 
