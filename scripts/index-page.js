@@ -2,8 +2,10 @@ const key = "ac75bb68-cbf2-4fe0-88ca-f67b40e88c1b";
 const url = "https://project-1-api.herokuapp.com/comments/";
 
 // Displaying all the comments from API
+
 function displayEveryting() {
   axios.get(`${url}?api_key=${key}`).then((response) => {
+    // const datesSorted = comments.sort
     response.data.forEach((comment) => {
       displayComment(comment);
     });

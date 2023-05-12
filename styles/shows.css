@@ -300,7 +300,14 @@ iframe {
     margin-bottom: 0.5rem;
   }
 }
+.shows__all-shows:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
 .shows__all-shows--selected {
+  background-color: #e1e1e1;
+}
+.shows__all-shows--selected:hover {
   background-color: #e1e1e1;
 }
 .shows__info-subheader {
@@ -417,7 +424,7 @@ footer a {
 }
 @media (min-width: 1280px) {
   .footer {
-    width: 63.75rem;
+    max-width: 63.75rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -548,9 +555,4 @@ footer a {
     font-family: "Avenir Next Regular";
     padding: 2rem 0 2rem 0;
   }
-}
-
-.shows__all-shows:hover {
-  background-color: #fafafa;
-  cursor: pointer;
 }/*# sourceMappingURL=shows.css.map */

@@ -259,9 +259,16 @@ iframe {
       margin-bottom: 0.5rem;
     }
   }
-
+  &__all-shows:hover {
+    background-color: $Alabaster-color;
+    cursor: pointer;
+  }
   &__all-shows--selected {
     background-color: $Mercury-color;
+
+    &:hover {
+      background-color: $Mercury-color;
+    }
   }
 
   &__info-subheader {
@@ -368,7 +375,7 @@ footer {
   }
 
   @include desktop {
-    width: 63.75rem;
+    max-width: 63.75rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -490,8 +497,3 @@ footer {
 }
 
 // Hover Part
-
-.shows__all-shows:hover {
-  background-color: $Alabaster-color;
-  cursor: pointer;
-}

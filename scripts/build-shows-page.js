@@ -2,11 +2,30 @@ const key = "ac75bb68-cbf2-4fe0-88ca-f67b40e88c1b";
 const url = "https://project-1-api.herokuapp.com/showdates/";
 
 function displayEverything() {
-  axios.get(`${url}?api_key=${key}`).then((response) => {
-    response.data.forEach((show) => {
-      displayshows(show);
+  axios
+    .get(`${url}?api_key=${key}`)
+    .then((response) => {
+      response.data.forEach((show) => {
+        displayshows(show);
+      });
+    })
+    .then(() => {
+      // clicking on a individual row make that row "selected"
+      // the row should stay selected until another row is clicked
+      const rows = document.querySelectorAll(".shows__all-shows");
+      let selectedRow = null;
+
+      rows.forEach((row) => {
+        row.addEventListener("click", () => {
+          if (selectedRow) {
+            selectedRow.classList.remove("shows__all-shows--selected");
+          }
+
+          row.classList.add("shows__all-shows--selected");
+          selectedRow = row;
+        });
+      });
     });
-  });
 }
 
 displayEverything();
@@ -108,24 +127,3 @@ function displayshows(show) {
   showsButton.appendChild(buyTickets);
   buyTickets.innerText = "BUY TICKETS";
 }
-
-// clicking on a individual row make that row "selected"
-// the row should stay selected until another row is clicked
-
-function selectRow() {
-  const rows = document.querySelectorAll(".shows__all-shows");
-  let selectedRow = null;
-
-  rows.forEach((row) => {
-    row.addEventListener("click", () => {
-      if (selectedRow) {
-        selectedRow.classList.remove("shows__all-shows--selected");
-      }
-
-      row.classList.add("shows__all-shows--selected");
-      selectedRow = row;
-    });
-  });
-}
-
-selectRow();
